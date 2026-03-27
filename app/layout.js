@@ -1,6 +1,5 @@
 import './globals.css'
 import { CartProvider } from '../lib/cart'
-import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 export const metadata = {
   title: 'UglyCute Studio — So Ugly. So Lovable.',
@@ -26,15 +25,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <PayPalScriptProvider options={{
-          'client-id': process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID,
-          currency: 'USD',
-          intent: 'capture',
-        }}>
-          <CartProvider>
-            {children}
-          </CartProvider>
-        </PayPalScriptProvider>
+        <CartProvider>
+          {children}
+        </CartProvider>
       </body>
     </html>
   )
