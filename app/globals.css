@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --uc-dark: #1a0a2e;
+  --uc-purple: #2d0a4e;
+  --uc-green: #39ff14;
+  --uc-cream: #fdf8f0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--uc-cream);
+  color: var(--uc-purple);
+  font-family: 'Nunito', sans-serif;
+}
+
+.font-display {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.05em;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(57, 255, 20, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(57, 255, 20, 0); }
+}
+
+.float { animation: float 3s ease-in-out infinite; }
+.wiggle { animation: wiggle 2s ease-in-out infinite; }
+.pulse-green { animation: pulse-green 2s infinite; }
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px) rotate(1deg);
+  box-shadow: 0 20px 40px rgba(45, 10, 78, 0.2);
+}
